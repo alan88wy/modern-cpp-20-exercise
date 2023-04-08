@@ -13,4 +13,6 @@ int main() {
 	constexpr int value = get_value();
 
 	cout << "Value : " << value << endl;
+
+	return 0;
 }

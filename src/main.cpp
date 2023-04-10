@@ -90,6 +90,7 @@ int main(int argc, char **argv) {
 	// std::setw - set width
 	// right/left - justification
 	// showpos - show positive sign
+	// uppercase/nouppercase - Enables the use of uppercase characters in floating-point and hexadecimal integer output.
 	// hex/dec/oct - shows hexadecimal, decimal and octal representation
 	// internal - internal justification. Sign is left justified, data is right justified
 	// cout << internal;  // Result : -      1234567890123
@@ -100,6 +101,8 @@ int main(int argc, char **argv) {
 	// -      1234567890123
 	// -         1234567823
 
+	cout << std::hex << std::showbase;
+	cout << uppercase << 0x2a << endl; 	// output : 0X2A
 
 	return 0;
 }

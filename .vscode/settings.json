@@ -3,7 +3,8 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "ios": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "cmath": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

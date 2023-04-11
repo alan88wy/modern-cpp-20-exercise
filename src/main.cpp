@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 using namespace std;
 
@@ -87,12 +88,24 @@ int main(int argc, char **argv) {
 
 	// Output Formatting
 	// need to add - #include <iomanip>
+	//
+	// precision(n) - set the precision of the output
 	// std::setw - set width
 	// right/left - justification
 	// showpos - show positive sign
+	// showpoint - Always show decimal point
+	// fixed - fix the output format (depending on the precision setting)
+	// unsetf(ios::scientific | ios::fixed), example :
+	// 		std::cout.setf ( std::ios::hex, std::ios::basefield );  // set hex as the basefield
+	// 		std::cout.setf ( std::ios::showbase );                  // activate showbase
+	// 		std::cout << 100 << '\n';
+	// 		std::cout.unsetf ( std::ios::showbase );                // deactivate showbase
+	//
+	// ios::scientific - use scientific notation eg 3.14159e+000
 	// uppercase/nouppercase - Enables the use of uppercase characters in floating-point and hexadecimal integer output.
 	// hex/dec/oct - shows hexadecimal, decimal and octal representation
 	// internal - internal justification. Sign is left justified, data is right justified
+	//
 	// cout << internal;  // Result : -      1234567890123
 	// cout <<  std::setw(20) << -1234567890123 << endl;
 	// cout <<  std::setw(20) << -1234567823 << endl;
@@ -101,8 +114,35 @@ int main(int argc, char **argv) {
 	// -      1234567890123
 	// -         1234567823
 
-	cout << std::hex << std::showbase;
-	cout << uppercase << 0x2a << endl; 	// output : 0X2A
+	// cout << std::hex << std::showbase;  // Show the output in hexadecimal representation
+	// cout << uppercase << 0x2a << endl; 	// output : 0X2A
+
+	// Numeric Limits
+	// name		expresses																possible value*
+	// ==========  =================================================================       ===============
+	// CHAR_BIT	Number of bits in a char object (byte)									8 or greater*
+	// SCHAR_MIN	Minimum value for an object of type signed char							-127 (-27+1) or less*
+	// SCHAR_MAX	Maximum value for an object of type signed char							127 (27-1) or greater*
+	// UCHAR_MAX	Maximum value for an object of type unsigned char						255 (28-1) or greater*
+	// CHAR_MIN	Minimum value for an object of type char								either SCHAR_MIN or 0
+	// CHAR_MAX	Maximum value for an object of type char								either SCHAR_MAX or UCHAR_MAX
+	// MB_LEN_MAX	Maximum number of bytes in a multibyte character, for any locale		1 or greater*
+	// SHRT_MIN	Minimum value for an object of type short int							-32767 (-215+1) or less*
+	// SHRT_MAX	Maximum value for an object of type short int							32767 (215-1) or greater*
+	// USHRT_MAX	Maximum value for an object of type unsigned short int					65535 (216-1) or greater*
+	// INT_MIN		Minimum value for an object of type int									-32767 (-215+1) or less*
+	// INT_MAX		Maximum value for an object of type int									32767 (215-1) or greater*
+	// UINT_MAX	Maximum value for an object of type unsigned int						65535 (216-1) or greater*
+	// LONG_MIN	Minimum value for an object of type long int							-2147483647 (-231+1) or less*
+	// LONG_MAX	Maximum value for an object of type long int							2147483647 (231-1) or greater*
+	// ULONG_MAX	Maximum value for an object of type unsigned long int					4294967295 (232-1) or greater*
+	// LLONG_MIN	Minimum value for an object of type long long int						-9223372036854775807 (-263+1) or less*
+	// LLONG_MAX	Maximum value for an object of type long long int						9223372036854775807 (263-1) or greater*
+	// ULLONG_MAX	Maximum value for an object of type unsigned long long int				18446744073709551615 (264-1) or greater*
+
+	// cout << INT_MAX << endl;
+
+
 
 	return 0;
 }

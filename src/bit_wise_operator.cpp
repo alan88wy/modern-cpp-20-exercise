@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Bitwise masking
 const unsigned char mask_bit_0 {0b00000001};
 const unsigned char mask_bit_1 {0b00000010};
 const unsigned char mask_bit_2 {0b00000100};
@@ -12,6 +13,13 @@ const unsigned char mask_bit_4 {0b00010000};
 const unsigned char mask_bit_5 {0b00100000};
 const unsigned char mask_bit_6 {0b01000000};
 const unsigned char mask_bit_7 {0b10000000};
+
+// Color mask
+const unsigned int red_mask { 0xFF000000 };
+const unsigned int green_mask { 0x00FF0000 };
+const unsigned int blue_mask { 0x0000FF00 };
+const unsigned int alpha_mask { 0x000000FF };
+
 
 int main(int argc, char  **argv) {
 
@@ -158,6 +166,20 @@ int main(int argc, char  **argv) {
     cout << setw(COLUMN_WIDTH) << "Toggle (Bit 3) : " << setw(COLUMN_WIDTH) << bitset<8>(mask_bit_3) << endl;
     cout << setw(COLUMN_WIDTH) << "Result ((& mask) >> 3) : " << setw(COLUMN_WIDTH) << bitset<8>(var1)  << endl;
 
+
+    // unsigned int my_color { 0xAABCDE00 };
+    unsigned int my_color { 0xbd179ed6 };
+
+    // set format options to show as hexadecimal
+    cout << hex << showbase << endl;
+
+    // Shift to make sure color byte is in the lower index position that can be interpreted as an integer between 0 and 255
+    // We use this to calculate the RGBA color (red, green, blue, alpha) = (255,255,255,255)
+
+    cout << "Red is : " << ((my_color & red_mask) >> 24) << endl;
+    cout << "Green is : " << ((my_color & green_mask) >> 16) << endl;
+    cout << "Blue is : " << ((my_color & blue_mask) >> 8) << endl;
+    cout << "Alpha is : " << ((my_color & alpha_mask) >> 0) << endl;
 
     return 0;
 }

@@ -46,5 +46,21 @@ int main() {
         cout << "Stop" << endl;
     }
 
+    // Switch with initializer
+
+    short int ready = 1;
+    switch (string name {"James"}; ready) 
+    {
+        case 1: {
+                cout << "Let's go " << name << endl;
+                break;
+            }
+        default: {
+            cout << "Let's wait for a while " << name << endl;
+            break;
+        }
+
+    }
+
     
 }

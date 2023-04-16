@@ -28,8 +28,6 @@ int main() {
 
     std::cout << "The volume is " << volume << std::endl;
 
-
-
     return 0;
 
 }

@@ -64,8 +64,6 @@ int main()
 
     std::cin >> first_day;
 
-    std::cout << std::endl;
-
     int days_in_the_month = 0;
     unsigned int days_count{0}; //After we print the day, we increment
     unsigned int print_width{6};

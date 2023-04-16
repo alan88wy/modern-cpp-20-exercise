@@ -15,7 +15,5 @@ int main() {
     cout << "Number 3 : " << number3 << endl;  // 33
     cout << "Result : " << result << endl;     // 33
 
-  
-
     return 0;
 }

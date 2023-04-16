@@ -179,7 +179,6 @@ int main()
                 std::cout << std::endl;
                 days_count = 0;
             }
-            
         }
 
         // Set the starting column for the following month
@@ -187,7 +186,6 @@ int main()
         days_count = 0;
         std::cout <<  std::endl;
         std::cout <<  std::endl;
-    
     }
 
     return 0;

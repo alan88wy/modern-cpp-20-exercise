@@ -132,7 +132,7 @@ int main() {
    n = operation (20, m, minus);
    cout << "n = operation (20, m, minus) is " << n << endl; // sames as calling substraction (20, m);
 
-
+   
 
    return 0;
 

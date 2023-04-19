@@ -38,6 +38,15 @@ int main(int argc, char **argv) {
 
 	cout << a << " " << b << endl;
 
+	// signed vs unsigned char
+	unsigned char ab { 0 };
+	ab--;
+	cout << "ab : " << static_cast<int>(ab) << endl;  // return 255 (char has value between 0 - 255)
+
+	signed char ac { 0 };
+	ac--;
+	cout << "ac : " << static_cast<int>(ac) << endl;  // return -1 since it is signed.
+
 	// Using auto to create variables
 
 	auto c {'c'};

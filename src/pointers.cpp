@@ -52,25 +52,27 @@ int operation (int x, int y, int (*functocall)(int,int)) {
 
 int main() {
 
-    char a {'C'};
-    char *ptr { &a };
-    const char* p { &a };   // this will cause compile time warming because it is not initialized during declaration
-    const char* const q { p };   // Must point to another pointer during declaration
-    char const * r;
-    char* const s { ptr };  // can change value of s
+   char a {'C'};
+   char *ptr { &a };
+   const char* p { &a };   // this will cause compile time warming it it is not initialized during declaration
+   const char* const q { p };   // Must point to another pointer during declaration
+   char const * r;
+   char* const s { ptr };  // can change value of s
 
-    // cout << showbase;
-    cout << "&a : " << &a << endl;
-    cout << "&p : " << p << endl;
-    cout << "*p : " << *p << endl;
+   // cout << showbase;
+   cout << "&a : " << &a << endl;
+   cout << " p : " << p << endl;
+   cout << "*p : " << *p << endl;
 
-    p = &a;
-    // *p = 'D';  - Cannot modify since we declare as const char*
+   // cout << noshowbase;
 
-    // *q = 'a'; - This will not work since we declare as const char const q
+      p = &a;
+      // *p = 'D';  - Cannot modify since we declare as const char*
 
-    r = &a;
-    // *r = 'D'; // This will not work since we declare as const *r
+      // *q = 'a'; - This will not work since we declare as const char const q
+
+      r = &a;
+      // *r = 'D'; // This will not work since we declare as const *r
 
    cout << "a = 'C', *ptr = &a, s = ptr, r = &a" << endl;
    cout << "a : " << a << endl;
@@ -83,7 +85,7 @@ int main() {
    cout << endl;
 
    // Pointer to int
-   
+
    int firstvalue = 5, secondvalue = 15;
    int * p1, * p2;
 
@@ -93,7 +95,7 @@ int main() {
    *p2 = *p1;         // value pointed to by p2 = value pointed to by p1
    p1 = p2;           // p1 = p2 (value of pointer is copied)
    *p1 = 20;          // value pointed to by p1 = 20
-    
+
    cout << "firstvalue is " << firstvalue << '\n';
    cout << "secondvalue is " << secondvalue << '\n';
    cout << "address of firstvalue is " << &firstvalue << '\n';
@@ -131,8 +133,6 @@ int main() {
    cout << "m = operation (7, 5, addition) is " << m << endl;
    n = operation (20, m, minus);
    cout << "n = operation (20, m, minus) is " << n << endl; // sames as calling substraction (20, m);
-
-   
 
    return 0;
 

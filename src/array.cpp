@@ -36,7 +36,7 @@ int main() {
         cout << i << " : " << random_no << endl;
     }
 
-    string prediction[] {
+    const char * prediction[] {
         "a lot of kinds running in the backyard" ,
         "a lot of empty beer bottles on your table.",
         "you partying too much",

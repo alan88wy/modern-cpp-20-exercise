@@ -59,20 +59,20 @@ int main() {
    char const * r;
    char* const s { ptr };  // can change value of s
 
-   // cout << showbase;
-   cout << "&a : " << &a << endl;
-   cout << " p : " << p << endl;
+   cout << showbase;
+   cout << "&a : " << hex << static_cast<void *>(&a) << endl;
+   cout << " p : " << hex << static_cast<const void *>(p) << endl;
    cout << "*p : " << *p << endl;
 
    // cout << noshowbase;
 
-      p = &a;
-      // *p = 'D';  - Cannot modify since we declare as const char*
+   p = &a;
+   // *p = 'D';  - Cannot modify since we declare as const char*
 
-      // *q = 'a'; - This will not work since we declare as const char const q
+   // *q = 'a'; - This will not work since we declare as const char const q
 
-      r = &a;
-      // *r = 'D'; // This will not work since we declare as const *r
+   r = &a;
+   // *r = 'D'; // This will not work since we declare as const *r
 
    cout << "a = 'C', *ptr = &a, s = ptr, r = &a" << endl;
    cout << "a : " << a << endl;
@@ -132,7 +132,49 @@ int main() {
 
    cout << "m = operation (7, 5, addition) is " << m << endl;
    n = operation (20, m, minus);
-   cout << "n = operation (20, m, minus) is " << n << endl; // sames as calling substraction (20, m);
+   cout << "n = operation (20, m, minus) is " << n << endl; // sames as calling substraction(20, m);
+
+   // Array of const pointer to const char
+
+   const char * student[] {
+      "James Dean",
+      "Thor",
+      "Iron Man"
+   };
+
+   cout << endl;
+   for (auto st : student) {
+      cout << st << endl;
+   }
+
+
+   // *student[0] = "Hulk" // will cause error - read-only variable is not assignable
+
+   // However, we can do this
+   
+   const char * new_student { "Hulk" };
+   student[0] = new_student;
+
+   cout << endl;
+   cout << "Assign Hulk to student[0] .... " << endl;
+   cout << endl;
+
+   for (auto st : student) {
+      cout << st << endl;
+   }
+
+   int scores[] {1,2,3,4,5,6};
+
+   int *p_score {scores};
+
+   int number { 21};
+
+   // pointer decay
+   p_score = &number;
+
+   cout << *p_score << endl;
+
+   
 
    return 0;
 

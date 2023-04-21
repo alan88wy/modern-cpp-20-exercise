@@ -178,20 +178,48 @@ int main() {
    int arr1[] {1,2,3,4};
    int arr2[] {5,6,7,8};
 
-   int * temp;
+   int * temp {nullptr};
 
-   int * p_arr1 = arr1;
-   int * p_arr2 = arr2;
+   int * p_arr1 { arr1 };
+   int * p_arr2 { arr2 };
    temp = p_arr1;
    p_arr1 = p_arr2;
    p_arr2 = temp;
 
-   for (auto i : arr1) {
-      cout << i << " ";
+   for (size_t i {}; i < size(arr1); i++) {
+      cout << p_arr1[i] << " ";
    }
 
-   cout << endl;
+   cout << dec << endl;
 
+   // Pointer arithmathic
+   int arr3[] {1,2,3,4,5,6,7,8,9,10};
+   int * ptr1 {arr3 + 0};
+   int * ptr2 {arr3 + 5};
+
+   cout << "ptr1 : " << ptr1 << endl;
+   cout << "ptr2 : " << ptr2 << endl;
+   cout << "ptr2 - ptr1 : " << ptr2 - ptr1 << endl;
+   cout << "ptr1 - ptr2 : " << ptr1 - ptr2 << endl;
+
+   // C++ also have ptrdiff_t to store the diff
+   ptrdiff_t pos_diff = ptr2 - ptr1;
+   ptrdiff_t neg_diff = ptr1 - ptr2;
+
+   cout << "pos_diff : " << pos_diff << endl;
+   cout << "neg_diff : " << neg_diff << endl;
+   
+   cout << "Size of ptrdiff_t : " << sizeof(ptrdiff_t) << endl;
+
+   cout << "Comparing pointers " << boolalpha << endl;
+   cout << endl;
+   cout << "ptr1 > ptr2 : " << (ptr1 > ptr2) << endl;
+   cout << "ptr1 < ptr2 : " << (ptr1 < ptr2) << endl;
+   cout << "ptr1 >= ptr2 : " << (ptr1 >= ptr2) << endl;
+   cout << "ptr1 <= ptr2 : " << (ptr1 <= ptr2) << endl;
+   cout << "ptr1 == ptr2 : " << (ptr1 == ptr2) << endl;
+   cout << "ptr1 != ptr2 : " << (ptr1 != ptr2) << endl;
+   cout << noboolalpha << endl;
 
    return 0;
 

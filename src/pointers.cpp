@@ -64,7 +64,7 @@ int main() {
    cout << " p : " << hex << static_cast<const void *>(p) << endl;
    cout << "*p : " << *p << endl;
 
-   // cout << noshowbase;
+   cout << noshowbase;
 
    p = &a;
    // *p = 'D';  - Cannot modify since we declare as const char*
@@ -174,7 +174,24 @@ int main() {
 
    cout << *p_score << endl;
 
-   
+   // Swapping array
+   int arr1[] {1,2,3,4};
+   int arr2[] {5,6,7,8};
+
+   int * temp;
+
+   int * p_arr1 = arr1;
+   int * p_arr2 = arr2;
+   temp = p_arr1;
+   p_arr1 = p_arr2;
+   p_arr2 = temp;
+
+   for (auto i : arr1) {
+      cout << i << " ";
+   }
+
+   cout << endl;
+
 
    return 0;
 

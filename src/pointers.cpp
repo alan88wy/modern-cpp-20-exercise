@@ -221,6 +221,25 @@ int main() {
    cout << "ptr1 != ptr2 : " << (ptr1 != ptr2) << endl;
    cout << noboolalpha << endl;
 
+   int * ptr4 { nullptr };
+   
+   ptr4 = new int;
+
+   *ptr4 = 50;
+
+   cout << "ptr4 : " << *ptr4 << endl;
+
+   delete ptr4;
+   ptr4 = nullptr; // Always good to reset memory to nullptr. Otherwise, it will contain junk data.
+
+   // Can re-use pointer
+   ptr4 = new int {45};
+   cout << "ptr4 re-used : " << *ptr4 << endl;
+
+   delete ptr4;
+   ptr4 = nullptr; // Always good to reset memory to nullptr
+
+
    return 0;
 
 }

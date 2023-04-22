@@ -222,7 +222,7 @@ int main() {
    cout << noboolalpha << endl;
 
    int * ptr4 { nullptr };
-   
+
    ptr4 = new int;
 
    *ptr4 = 50;
@@ -238,6 +238,19 @@ int main() {
 
    delete ptr4;
    ptr4 = nullptr; // Always good to reset memory to nullptr
+
+   int *ptr5 ;
+   cout << "ptr5 : " << ptr5 << endl;  // print garbage
+   delete ptr5;
+   // cout << "*ptr5 after delete : " << *ptr5 << endl;  // crash when reach this point
+
+   // Dynamic Arrays
+   size_t size{10};
+
+   double *p_salaries { new double[size]}; // salaries will contain garbage values
+   int * p_students {  new(nothrow) int[size]{}}; //  all values initialize into 0
+   double *p_scores { new(nothrow) double[size]{1,2,3,4,5}}; // Initialize first 5 element and the rest will be 0.
+
 
 
    return 0;

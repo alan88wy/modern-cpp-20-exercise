@@ -240,7 +240,7 @@ int main() {
    ptr4 = nullptr; // Always good to reset memory to nullptr
 
    int *ptr5 ;
-   cout << "ptr5 : " << ptr5 << endl;  // print garbage
+   cout << "ptr5 : " << ptr5 << endl;  // print garbage because it is not initialized
    delete ptr5;
    // cout << "*ptr5 after delete : " << *ptr5 << endl;  // crash when reach this point
 

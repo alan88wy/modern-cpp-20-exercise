@@ -247,11 +247,18 @@ int main() {
    // Dynamic Arrays
    size_t size{10};
 
-   double *p_salaries { new double[size]}; // salaries will contain garbage values
-   int * p_students {  new(nothrow) int[size]{}}; //  all values initialize into 0
-   double *p_scores { new(nothrow) double[size]{1,2,3,4,5}}; // Initialize first 5 element and the rest will be 0.
+   double *p_salaries { new double[size] }; // salaries will contain garbage values
+   int * p_students {  new(nothrow) int[size]{} }; //  all values initialize into 0
+   double *p_scores { new(nothrow) double[size]{1,2,3,4,5} }; // Initialize first 5 element and the rest will be 0.
 
+   delete[] p_salaries;
+   p_salaries = nullptr;
 
+   delete[] p_students;
+   p_students = nullptr;
+
+   delete[] p_scores;
+   p_scores = nullptr;
 
    return 0;
 

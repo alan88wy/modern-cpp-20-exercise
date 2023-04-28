@@ -2,7 +2,11 @@
     "files.associations": {
         "iostream": "cpp",
         "ostream": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "xstring": "cpp",
+        "iterator": "cpp",
+        "initializer_list": "cpp",
+        "xutility": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

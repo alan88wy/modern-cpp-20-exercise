@@ -191,6 +191,14 @@ int main() {
             push_back	    Append character to string (public member function)
             assign	        Assign content to string (public member function)
             insert	        Insert into string (public member function)
+                            string (1)	  : string& insert (size_t pos, const string& str);
+                            substring (2) : string& insert (size_t pos, const string& str, size_t subpos, size_t sublen = npos);
+                            c-string (3)  : string& insert (size_t pos, const char* s);
+                            buffer (4)	  : string& insert (size_t pos, const char* s, size_t n);
+                            fill (5)	  : string& insert (size_t pos,   size_t n, char c);iterator insert (const_iterator p, size_t n, char c);
+                            single character (6) : iterator insert (const_iterator p, char c);
+                            range (7) : template <class InputIterator>iterator insert (iterator p, InputIterator first, InputIterator last);
+                            initializer list (8) : string& insert (const_iterator p, initializer_list<char> il);
             erase	        Erase characters from string (public member function)
             replace	        Replace portion of string (public member function)
             swap	        Swap string values (public member function)
@@ -198,7 +206,9 @@ int main() {
 
         String operations:
             c_str	            Get C string equivalent (public member function)
-        data	                Get string data (public member function)
+                                Returns a pointer to an array that contains a null-terminated sequence of 
+                                characters (i.e., a C-string) representing the current value of the string object.
+            data	            Get string data (public member function)
             get_allocator   	Get allocator (public member function)
             copy        	    Copy sequence of characters from string (public member function)
             find        	    Find content in string (public member function)
@@ -221,9 +231,9 @@ int main() {
             operator<<	    Insert string into stream (function)
             getline	        Get line from stream into string (function)
     */
-   
+
     string full_name; // Empty String
-    string planet {"Earth. Where the sky is blue"};  // Initialized with string literal
+    string planet {"Earth. Where the sky is blue."};  // Initialized with string literal
     string preferred_planet {planet}; // Initialized with other string
     string message {"Hello there", 5}; // Initialized with part of string literal
     string weird_message(4, 'e'); // Initialized with multiple copies of a char
@@ -245,7 +255,7 @@ int main() {
     using namespace string_literals;
 
     string str5 {"Hello"s + " World!"}; // turn both into strings using the s suffix
-    cout << "str5 : " << str5 << endl;
+    cout << "str5 {'Hello's + ' World!'} : " << str5 << endl;
 
     str5.append(" Welcome.");
 
@@ -262,6 +272,102 @@ int main() {
     cout << "str5.append('Hello World', 0, 5) : " << str5 << endl;
 
     cout << "to_string(55) + ' Hello' : " << to_string(55) + " Hello" << endl;
+
+    cout << "planet.size() : " << planet.size() << endl;
+
+    // Accesing each char in the string
+
+    for (size_t i{}; i < planet.size(); i++) {
+        cout << planet.at(i) << " ";
+    }
+
+    cout << endl;
+
+    // To change value in string
+    string myStr { "This is a string" };
+
+    // change the first character to lower case
+    myStr.at(0) = tolower(myStr.at(0));
+
+    cout << "myStr.at(0) = tolower(myStr.at(0)) : " << myStr << endl;
+
+    // Front and Back
+
+    // cout << "myStr : " << myStr << endl;
+    myStr.front() = toupper(myStr.front());
+    cout << "myStr.front() = toupper(myStr.front()) : " << myStr << endl;
+    cout << "myStr.front() : " << myStr.front() << endl;
+    cout << "myStr.back() : " << myStr.back() << endl;
+
+    // c_str - constant c string
+    // const char * mystr2 = mystr will failed. need to do the following
+    const char * myStr2 = myStr.c_str();
+    cout << "const char * myStr2 = myStr.c_str() : " << myStr2 << endl;
+
+    // data function
+    char * myStr3 = myStr.data();
+
+    myStr3[0] = 't';
+
+    cout << "myStr3[0] = 't' : " << myStr3 << endl;
+
+    string myStr4;
+
+    cout << "myStr4.empty() : " << boolalpha << myStr4.empty() << endl;
+    cout << noboolalpha << endl;
+
+    cout << "myStr3.length() : " << myStr.length() << endl;
+    cout << "myStr3.size() : " << myStr.size() << endl;
+
+    cout << "myStr.max_size() : " << myStr.max_size() << endl;
+
+    cout << "myStr.capacity() : " << myStr.capacity() << endl;
+
+    string myStr5 { "This is a string" };
+
+    cout << "myStr5 : " << myStr5 << endl;
+    cout << "myStr5.size() : " << myStr5.size() << endl;
+    myStr5.resize(4);   // resize will only reduce the string size but not the capacity allocated
+    cout << "myStr5.resize(4) - myStr5.capacity() : " << myStr5.capacity() << endl;
+    cout << "myStr5 : " << myStr5 << endl;
+    myStr5.shrink_to_fit();   // shrink capacity to the actual size of the string
+    cout << "myStr5.shrink_to_fit() - myStr5.capacity() : " << myStr5.capacity() << endl;
+    
+    // insert
+    std::string myStr6="to be question";
+    std::string myStr7="the ";
+    std::string myStr8="or not to be";
+    std::string::iterator it;
+
+
+
+
+
+
+
+
+
+
+    // used in the same order as described above:
+
+    // string& insert (size_t pos, const string& str);
+    myStr6.insert(6, myStr7);                              // to be (the )question
+    // string& insert (size_t pos, const string& str, size_t subpos, size_t sublen = npos);
+    myStr6.insert(6, myStr8, 3, 4);                        // to be (not )the question
+    // string& insert (size_t pos, const char* s, size_t n);
+    myStr6.insert(10, "that is cool", 8);                  // to be not (that is )the question
+    // string& insert (size_t pos, const char* s);
+    myStr6.insert(10, "to be ");                           // to be not (to be )that is the question
+    // string& insert (size_t pos, size_t n, char c); iterator insert (const_iterator p, size_t n, char c);
+    myStr6.insert(15, 1, ':');                             // to be not to be(:) that is the question
+    //iterator insert (const_iterator p, char c);
+    it = myStr6.insert(myStr6.begin()+5, ',');             // to be(,) not to be: that is the question
+    //template <class InputIterator>iterator insert (iterator p, InputIterator first, InputIterator last);
+    myStr6.insert (myStr6.end(), 3, '.');                  // to be, not to be: that is the question(...)
+    // string& insert (const_iterator p, initializer_list<char> il);
+    myStr6.insert (it+2,myStr8.begin(),myStr8.begin()+3);  // (or )
+
+    std::cout << myStr6 << '\n';
 
     return 0;
 }

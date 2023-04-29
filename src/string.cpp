@@ -339,15 +339,6 @@ int main() {
     std::string myStr8="or not to be";
     std::string::iterator it;
 
-
-
-
-
-
-
-
-
-
     // used in the same order as described above:
 
     // string& insert (size_t pos, const string& str);

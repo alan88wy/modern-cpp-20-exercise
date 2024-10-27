@@ -18,10 +18,11 @@ int main(int argc, char **argv) {
 	// showpoint - Always show decimal point
 	// fixed - fix the output format (depending on the precision setting)
 	// unsetf(ios::scientific | ios::fixed), example :
-    std::cout.setf ( std::ios::hex, std::ios::basefield );  // set hex as the basefield
+    std::cout.setf ( std::ios::hex, std::ios::basefield );  // set hex as the base field
     std::cout.setf ( std::ios::showbase );                  // activate showbase
-    std::cout << 100 << '\n';
+    std::cout << "Print 100 as hex : " << 100 << '\n';
     std::cout.unsetf ( std::ios::showbase );                // deactivate showbase
+	std::cout.setf ( std::ios::dec, std::ios::basefield );  // set dec as base field
 
 	// ios::scientific - use scientific notation eg 3.14159e+000
 	// uppercase/nouppercase - Enables the use of uppercase characters in floating-point and hexadecimal integer output.

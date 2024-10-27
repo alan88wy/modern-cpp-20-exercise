@@ -148,6 +148,7 @@ int main()
         }
 
         //Print header
+
         std::cout   << std::right << std::setw(print_width) << "Mon"
                     << std::right << std::setw(print_width) << "Tue"
                     << std::right << std::setw(print_width) << "Wed"
@@ -166,7 +167,7 @@ int main()
                 days_count = 0;
             }
         
-        }
+        }  
 
         // Print calendar
         for(unsigned int i{1} ; i <= days_in_the_month; ++i){ 

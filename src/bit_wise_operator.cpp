@@ -25,6 +25,13 @@ int main(int argc, char  **argv) {
 
     unsigned short int data {0b11111110};
 
+    /*
+    When the showbase format flag is set, numerical integer values inserted 
+    into output streams are prefixed with the same prefixes used by C++ literal constants: 
+    0x for hexadecimal values (see hex), 
+    0 for octal values (see oct) and 
+    no prefix for decimal-base values (see dec).
+    */
     cout << "Original value : " << endl;
     cout << "================ " << endl;
     cout << endl;
@@ -36,14 +43,37 @@ int main(int argc, char  **argv) {
 
     // shift operator
 
+    /*
+    A bitset is an array of bools but each boolean value is not stored in a separate byte instead, 
+    bitset optimizes the space such that each boolean value takes 1-bit space only, so space taken 
+    by bitset is less than that of an array of bool or vector of bool. 
+
+    A limitation of the bitset is that size must be known at compile time i.e. size of the bitset is fixed.
+    
+    */
+    
+    // declaring an uninitialized bitset object
+    bitset<8> uninitializedBitset;
+
+    // initialization with decimal number
+    bitset<8> decimalBitset(15);
+
+    // initialization with binary string
+    bitset<8> stringBitset(string("1111"));
+
+    cout << "Uninitialized bitset: " << uninitializedBitset << endl;
+    cout << "Initialized with decimal: " << decimalBitset << endl;
+    cout << "Initialized with string: " << stringBitset << endl;
+    cout << "Data: " << bitset<16>(data) << endl;
+
     cout << "Shift Operator" << endl;
     cout << "============== " << endl;
     cout << endl;
 
-    data = static_cast<unsigned short int>(data >> 1);  // Right shift
+    data = static_cast<unsigned short int>(data >> 1);  // Right shift one bit
     cout << "data (right shift) : " << bitset<16>(data) << ", dec : " << dec << data << endl;
 
-    data = static_cast<unsigned short int>(data << 1);  // Right shift
+    data = static_cast<unsigned short int>(data << 1);  // Left shift one bit
     cout << "data (left shift) : " << bitset<16>(data) << ", dec : " << dec << data << endl;
 
     cout << endl;

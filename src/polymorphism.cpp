@@ -14,6 +14,7 @@ class PureBase
     public:
 
         virtual void purelyDoSomething() = 0;  // Pure virtual function = interface
+        virtual ~PureBase() {};
 };
 
 class Ipolymorphic: public Base, public PureBase

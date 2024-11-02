@@ -4,6 +4,37 @@
 
 using namespace std;
 
+// pass a sized array
+void printArray(int a[10])
+{
+    for (int i = 0; i < 5; i++)
+        a[i] = a[i] + 5;
+}
+
+// Pass with unsized array elements. Array will be passed as pointer
+void printArrayUnsized(int a[],int size)
+{
+    for (int i = 0; i < size; i++)
+        a[i] = a[i] * 10;
+}
+
+// Pass array as pointer
+void printArrayPtr(int* a)
+{
+    for (int i = 0; i < 5; i++)
+        *(a + i) = *(a + i) + 5;
+}
+
+// Pass array by reference
+void modifyArray(int (&arr)[5])
+{
+  // deducing size
+  int size = sizeof(arr) / sizeof(int);
+    for (int i = 0; i < size; ++i) {
+        arr[i] *= 2;
+    }
+}
+
 int main() {
 
     // srand has to run once per program
@@ -53,5 +84,31 @@ int main() {
         random_no = rand() % 10;
         cout << i << " : " << prediction[random_no] << endl;
     }
+
+    // array declaration
+    int a[5] = { 1, 2, 3, 4, 5 };
+    printArray(a); // Passing array to function
+
+    // printing array elements
+    for (int i = 0; i < 5; i++)
+        cout << a[i] << " ";
+    cout << "\n";
+    
+    printArrayUnsized(a, 5); // Passing array to function
+
+    // printing array elements
+    for (int i = 0; i < 5; i++)
+        cout << a[i] << " ";
+    cout << "\n";
+
+    printArrayPtr(a);
+    for (int i = 0; i < 5; i++)
+        cout << a[i] << " ";
+    cout << "\n";
+
+    modifyArray(a); // pass by reference
+    for (int i = 0; i < 5; i++)
+        cout << a[i] << " ";
+    cout << "\n";
     
 }

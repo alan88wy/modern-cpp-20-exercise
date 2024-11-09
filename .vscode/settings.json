@@ -137,6 +137,9 @@
     "xtree": "cpp",
     "xutility": "cpp",
     "set": "cpp",
-    "unordered_set": "cpp"
+    "unordered_set": "cpp",
+    "semaphore": "cpp",
+    "condition_variable": "cpp",
+    "mutex": "cpp"
   }
 }

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <set>
 
 int main()
 {
@@ -118,42 +117,6 @@ int main()
     }
 
     std::cout << "\n";
-
-    std::set<int> s2;
-
-    for (auto i : v)
-    {
-        s2.insert(i);
-    }
-
-    std::cout << "set s2 : ";
-
-    for (auto i : s2)
-    {
-        std::cout << i << " ";
-    }
-
-    std::cout << "\n";
-
-    auto it3 = s2.find(19);
-
-    if (it3 != s2.end())
-    {
-        std::cout << "deleting : " << *it3 << "\n";
-        s2.erase(it3);
-    } else {
-        std::cout << "Cannot find -> " << 19 << "\n";
-    }
-        
-    std::cout << "set s2 : ";
-
-    for (auto i : s2)
-    {
-        std::cout << i << " ";
-    }
-
-    std::cout << "\n";
-
 
     return 0;
 }

@@ -31,9 +31,8 @@ int main() {
 
     cout << "MAX_DATA -> " << MAX_DATA << endl;
 
-    static_assert(MAX_DATA == 1000);   // To check during compile time whether the value is 1000. Compilation will fail if it is not. This is for constant only.
+    static_assert(MAX_DATA == 1000, "MAX_DATA is 1000");   // To check during compile time whether the value is 1000. Compilation will fail if it is not. This is for constant only.
     
-
 
     // constinit int age = 30; - this will fail during compile time. Must declare outside.
 

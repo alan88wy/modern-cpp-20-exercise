@@ -45,5 +45,5 @@ int main()
     // std::unique_ptr<Base> r = q;
 
 
-    return 1;
+    return 0;
 }

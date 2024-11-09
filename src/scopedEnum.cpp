@@ -14,5 +14,5 @@ int main()
 
     mye = myEnum::mySecondValue;
 
-    return 1;
+    return 0;
 }

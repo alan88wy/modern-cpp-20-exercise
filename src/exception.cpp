@@ -29,5 +29,5 @@ int main(int argc, char **argv)
         std::cout << "String exception raised with a value of " << e << "\n";
     };
 
-    return 1;
+    return 0;
 }

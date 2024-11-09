@@ -1,7 +1,8 @@
 #include <iostream>
 #include <list>
+#include <algorithm>
 
-void print_list(std::list<int>& l, std::string message)
+void print_list(std::list<int> l, std::string message)
 {
     std::cout << message << " : ";
 
@@ -197,5 +198,14 @@ int main()
 
     print_list(l10, "Remove number 3 from {1,3,3,5,9,2,3,4,6}");
 
-    return 1;
+    // find and remove first item found
+    std::list<int> l11 {1,3,3,5,9,2,3,4,6};
+
+    auto it {std::find(l11.begin(), l11.end(), 3) };
+
+    l11.erase(it);
+
+    print_list(l11, "Remove first number 3 at found location from list");
+
+    return 0;
 }

@@ -30,6 +30,6 @@ int main()
 
     std::cout << "i = " << i << " j = " << j << " k = " << k << "\n";
 
-    return 1;
+    return 0;
 }
 

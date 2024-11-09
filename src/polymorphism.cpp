@@ -45,6 +45,6 @@ int main()
 
     // PureBase myPureBase;  // This will fail with this error: cannot declare variable 'myPureBase' to be of abstract type 'PureBase'
 
-    return 1;
+    return 0;
 }
 

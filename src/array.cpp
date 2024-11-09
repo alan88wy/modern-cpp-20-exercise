@@ -111,4 +111,5 @@ int main() {
         cout << a[i] << " ";
     cout << "\n";
     
+    return 0;
 }

@@ -41,5 +41,5 @@ int main()
     fs3 << "Second Line \n";
     fs3 << "Third Line \n";
 
-    return 1;
+    return 0;
 }

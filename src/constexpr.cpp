@@ -22,14 +22,14 @@ const int val1 {35};  // Run-time constant
 int main() {
 
     const auto at { 40 };
-    cout << at << endl;
+    cout << "at -> " << at << endl;
 
     // constexpr - compile time constant.
     constexpr int MAX_DATA = 1000;
 
     // constexpr int MAX_DAT2 {MAX_DATA + 2} - this will not work because MAX_DATA is not known during compile time.
 
-    cout << MAX_DATA << endl;
+    cout << "MAX_DATA -> " << MAX_DATA << endl;
 
     static_assert(MAX_DATA == 1000);   // To check during compile time whether the value is 1000. Compilation will fail if it is not. This is for constant only.
     
@@ -45,4 +45,6 @@ int main() {
 
     cout << "Legal age is now " << legal_age << endl;
 
+    return 0;
+    
 }

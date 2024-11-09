@@ -26,9 +26,30 @@ int main()
 
     cout << "Using Range-based for loops\n";
 
+    for (auto r: vect)
+    {
+        for (auto c:r)
+        {
+            cout << c <<" ";
+        }
+
+        cout <<"\n";
+    }
+
+    cout << "Using Range-based for loops to mutiple by (c + 2) * 2 \n";
+
     for (auto &r: vect)
     {
         for (auto &c:r)
+        {
+            c = (c + 2) * 2; // change data 
+        }
+
+    }
+
+    for (auto r: vect)
+    {
+        for (auto c:r)
         {
             cout << c <<" ";
         }
@@ -68,5 +89,22 @@ int main()
 
         cout << "\n";
     }
+
+    /*
+    * To iterate over a vector of strings, we would use a const auto& specifier, as we should
+    * pass strings via const reference for performance reasons:
+    */
+
+    std::vector<std::string> v = { "Hello", "World,", "C++"}; 
+    
+    v.push_back("Is great!"); 
+    
+    for (const auto& el : v) { 
+        std::cout << el << ' '; 
+    }
+
+    std::cout << "\n";
+
+    return 0;
 
 }

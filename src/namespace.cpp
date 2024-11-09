@@ -39,5 +39,5 @@ int main()
 
     A::B::func();
 
-    return 1;
+    return 0;
 }

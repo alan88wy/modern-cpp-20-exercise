@@ -1,7 +1,7 @@
 #include <iostream>
 #include <forward_list>
 
-void print_list(std::forward_list<int>& l, std::string message)
+void print_list(std::forward_list<int> l, std::string message)
 {
     std::cout << message << " : ";
 
@@ -94,5 +94,5 @@ int main()
      * reverse() 	Reverses the order of the elements present in the forward_list.
     */
 
-    return 1;
+    return 0;
 }

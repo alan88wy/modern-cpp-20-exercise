@@ -140,6 +140,7 @@
     "unordered_set": "cpp",
     "semaphore": "cpp",
     "condition_variable": "cpp",
-    "mutex": "cpp"
+    "mutex": "cpp",
+    "codecvt": "cpp"
   }
 }

@@ -8,6 +8,7 @@ imgui.ini
 *.o
 *.obj
 *.exe
+*.pcm
 examples/build/*
 examples/*/Debug/*
 examples/*/Release/*

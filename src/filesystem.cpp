@@ -137,6 +137,20 @@ int main(int argc, char* argv[])
     std::cout << "Root Path -> " << std::filesystem::path(config).root_path() << "\n";
     std::cout << "Extension -> " << std::filesystem::path(config).extension() << "\n";
     std::cout << "Relative Path -> " << std::filesystem::path(config).relative_path() << "\n";
+    std::cout << "Is Absolute -> " << (std::filesystem::path(config).is_absolute() ? "True": "False") << "\n";
+    std::cout << "Is Relative -> " << (std::filesystem::path(config).is_relative() ? "True": "False") 
+              << " -> " << std::filesystem::path(config).relative_path() << "\n";
+    std::cout << "Has root name -> " << (std::filesystem::path(config).has_root_name() ? "True": "False") 
+              << " -> " << std::filesystem::path(config).root_name() << "\n";
+    std::cout << config << " is block file -> " << (std::filesystem::is_block_file(config) ? "True": "False") << "\n";
+    std::cout << config << " is character file -> " << (std::filesystem::is_character_file(config) ? "True": "False") << "\n";
+    std::cout << config << " is directory -> " << (std::filesystem::is_directory(config) ? "True": "False") << "\n";
+    std::cout << config << " is empty -> " << (std::filesystem::is_empty(config) ? "True": "False") << "\n";
+    std::cout << config << " is fifo file -> " << (std::filesystem::is_fifo(config) ? "True": "False") << "\n";
+    std::cout << config << " is regular file -> " << (std::filesystem::is_regular_file(config) ? "True": "False") << "\n";
+    std::cout << config << " is socket -> " << (std::filesystem::is_socket(config) ? "True": "False") << "\n";
+    std::cout << config << " is symbolic like file -> " << (std::filesystem::is_symlink(config) ? "True": "False") << "\n";
+    std::cout << config << " size is -> " << std::filesystem::file_size(config) << " bytes\n";
 
     auto myFolder = "C:\\temp\\ss";
 

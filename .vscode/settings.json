@@ -141,6 +141,7 @@
     "semaphore": "cpp",
     "condition_variable": "cpp",
     "mutex": "cpp",
-    "codecvt": "cpp"
+    "codecvt": "cpp",
+    "ranges": "cpp"
   }
 }

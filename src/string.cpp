@@ -102,53 +102,6 @@ int main() {
     cout << "strchr  : " << strchr(str1, target) << endl; 
     cout << "strstr  : " << strstr(str1, "fox") << endl;             // Locate "fox" in the string and return string
                                                                      // from that position onwards.
-    char * tok;
-
-    /*
-        On a first call, the function expects a C string as argument for str, 
-        whose first character is used as the starting location to scan for tokens. 
-        
-        In subsequent calls, the function expects a null pointer and uses the position right 
-        after the end of the last token as the new starting location for scanning.
-    */
-
-    tok = strtok(str1, " ");
-
-    cout << "strtok  : " << endl;
-
-    while (tok != NULL) {
-        cout << tok << endl;
-
-        // Once the terminating null character of str is found in a call to strtok, all subsequent
-        // calls to this function (with a null pointer as the first argument) return a null pointer.
-        tok = strtok(NULL, " ");
-    }
-
-    cout << "strcat : " << strcat(str2, str3) << endl;
-    char * dest = new char[strlen(str3) + 1];
-    dest = strcpy(dest, str3);
-    cout << "strcpy : " << dest << endl;
-    cout << "strncpy : " << strncpy(dest, str2, strlen(dest)) << endl;
-
-    // Get "the sky is blue" from the sentences below.
-
-    const char src1[] {"will old space the replace"};
-    const char src2[] {"sense sky  hit has"};
-    const char src3[] {"hello went is get"};
-    const char src4[] {"red blue yellow orange"};
-
-    char* result;
-    result = new char[20];
-
-    strncpy(result, src1 + 15, 3);
-    strncpy(result + 3,src2 + 5, 4 );
-    strncpy(result + 7, src3 + 10, 3);
-
-    strncpy(result + 10,src4 + 3, 5 );
-
-    result[15] = '\0';
-    cout << "result : " << result << endl << endl;
-
     /*
         String
         ******
@@ -359,6 +312,13 @@ int main() {
     myStr6.insert (it+2,myStr8.begin(),myStr8.begin()+3);  // (or )
 
     std::cout << myStr6 << '\n';
+
+    std::string aa {"Hello"};
+    std::string ab {"Hello"};
+
+    std::cout << "aa.compare(ab) ? " << ((aa.compare(ab) == 0) ? "True" : "False") << "\n";
+    std::cout << "aa == ab ? " << ((aa == ab)? "True" : "False") << "\n";
+ 
 
     return 0;
 }

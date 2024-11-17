@@ -142,6 +142,7 @@
     "condition_variable": "cpp",
     "mutex": "cpp",
     "codecvt": "cpp",
-    "ranges": "cpp"
+    "ranges": "cpp",
+    "print": "cpp"
   }
 }

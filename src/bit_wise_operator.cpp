@@ -70,6 +70,15 @@ int main(int argc, char  **argv) {
     cout << "============== " << endl;
     cout << endl;
 
+    int i = 5 << 2;
+
+    std::cout << "5 << 2 -> " << dec << i << "\n";
+
+    i = 5 >> 1;
+
+    std::cout << "5 >> 1 -> " << dec << i << "\n";
+
+
     data = static_cast<unsigned short int>(data >> 1);  // Right shift one bit
     cout << "data (right shift) : " << bitset<16>(data) << ", dec : " << dec << data << endl;
 
@@ -123,6 +132,7 @@ int main(int argc, char  **argv) {
     cout << "Compound Bitwise and Assignment Operators : >>=, <<=, !|=, &=, ^=" << endl;
     cout << "================================================================" << endl;
     cout << endl;
+
 
     // Compound Shift right by 2
     v2 >>=2;

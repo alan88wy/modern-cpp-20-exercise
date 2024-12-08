@@ -109,7 +109,7 @@ void AdvancedSharedPtr()
     std::shared_ptr<Base> sp5;
 
     std::thread t1([&]() {
-        std::atomic_store(&sp5, std::atomic_load(&sp4));
+        std::atomic_store(&sp5, std::shared_ptr<Base>(sp4));
     });
 
     std::thread t2([&]() {

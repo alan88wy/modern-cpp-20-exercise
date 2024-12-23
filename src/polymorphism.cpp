@@ -4,7 +4,11 @@ class Base{
     public:
         virtual void doSomething()
         {
-            std::cout << "I am doing Something!\n";
+            std::cout << "Base -> I am doing Something!\n";
+        };
+
+        virtual ~Base() {
+            std::cout << "Exiting Base!\n";
         };
 };
 
@@ -14,7 +18,9 @@ class PureBase
     public:
 
         virtual void purelyDoSomething() = 0;  // Pure virtual function = interface
-        virtual ~PureBase() {};
+        virtual ~PureBase() {
+            std::cout << "Exiting Purebase!\n";
+        };
 };
 
 class Ipolymorphic: public Base, public PureBase
@@ -22,12 +28,16 @@ class Ipolymorphic: public Base, public PureBase
     public:
         void doSomething()
         {
-            std::cout << "I had polymorphic into something else!\n";
+            std::cout << "Ipolymorphic -> I had polymorphic into something else!\n";
         };
 
         void purelyDoSomething()
         {
-            std::cout << "I am build from interface!\n";
+            std::cout << "Ipolymorphic -> I am build from interface!\n";
+        };
+
+        virtual ~Ipolymorphic() {
+            std::cout << "Exiting Ipolymorphic!\n";
         };
 };
 

@@ -104,7 +104,7 @@ int main()
 
     while (it2 != v.end())
     {
-        v.erase(it);
+        v.erase(it2);
 
         it2 = std::find(v.begin(), v.end(), 2);
     }

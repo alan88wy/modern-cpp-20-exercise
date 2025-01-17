@@ -3,7 +3,6 @@
 #include <vector>
 #include <tuple>
 
-
 int main()
 {
 
@@ -11,7 +10,7 @@ int main()
 
     std::println("Go ahead, make my day");
 
-    std::print("你好{}！\n\n", "世界");
+    std::print("{},你好！\n\n", "世界");
 
     /*
      * Format Specifier

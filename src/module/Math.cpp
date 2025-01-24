@@ -1,5 +1,4 @@
 // Math.cppm
-
 export module Math;
 
 export import Math.Algebra;

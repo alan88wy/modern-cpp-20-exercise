@@ -1,6 +1,4 @@
-// main.cpp.
-
-import Math.Algebra;
+import adder;
 
 import <iostream>;
 

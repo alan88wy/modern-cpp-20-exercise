@@ -1,7 +1,6 @@
-import adder;
+import Adder;
 
-import <iostream>;
-
+import std;
 
 int main() {
   // MilesToKM is from Math.Algebra

@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "d:/Learning/c++/modern-cpp-20-exercise/src",
-      "program": "d:/Learning/c++/modern-cpp-20-exercise/src/build/Debug/outDebug",
+      "program": "d:/Learning/c++/modern-cpp-20-exercise/src/build/Debug/"${fileBasenameNoExtension},
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

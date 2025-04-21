@@ -17,6 +17,17 @@ using namespace std;
 
 // DeepSeek - C++ 20
 // C++20 concept to check if T supports operator+
+//
+// Syntax:
+//
+//  template <parameter-­list> 
+//  concept concept-­name = constraints-­expression;
+//
+//  eg:
+//  template <typename T>
+//  concept Big = size(T) > 1000;
+//
+
 template <typename T>
 concept Addable = requires(const T& a, const T& b) {
     { a + b } -> convertible_to<T>;

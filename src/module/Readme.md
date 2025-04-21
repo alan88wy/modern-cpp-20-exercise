@@ -43,4 +43,7 @@ cl /Feprogram.exe /std:c++latest /EHsc /nologo /W4 "%VCToolsInstallDir%\modules\
 ```
 
 ### Powershell
-cl /Feprogram.exe /std:c++latest /EHsc /nologo /W4 $env:VCToolsInstallDir\modules\std.ixx .\MathAlgebra.ixx .\MathGeometry.ixx .\Math.ixx .\main.cpp
+$env:VCToolsInstallDir="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808"
+$env:stdPath=Split-Path (Get-ChildItem -Path "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\" -Include std.ixx -File -Recurse -ErrorAction SilentlyContinue  | Sort-Object LastWriteTime -Descending | Select-Object -First 1).FullName
+
+cl /Feprogram.exe /std:c++latest /EHsc /nologo /W4 $env:stdPath\std.ixx .\MathAlgebra.ixx .\MathGeometry.ixx .\Math.ixx .\main.cpp

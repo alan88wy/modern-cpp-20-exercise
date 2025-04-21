@@ -303,7 +303,7 @@ int main()
 
     auto e = greater_than(x, y);
 
-    if (d) {
+    if (e) {
         cout << "Greater Than : " << (*e == 0 ? "False" : "True") << endl;
     } else {
         cout << "Greater Than: Invalid operation" << endl;

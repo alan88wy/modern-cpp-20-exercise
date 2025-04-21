@@ -41,3 +41,6 @@ cl /std:c++latest /EHsc /nologo /W4 /c "C:\Program Files\Microsoft Visual Studio
 ```
 cl /Feprogram.exe /std:c++latest /EHsc /nologo /W4 "%VCToolsInstallDir%\modules\std.ixx" .\MathAlgebra.ixx .\MathGeometry.ixx .\Math.ixx .\main.cpp
 ```
+
+### Powershell
+cl /Feprogram.exe /std:c++latest /EHsc /nologo /W4 $env:VCToolsInstallDir\modules\std.ixx .\MathAlgebra.ixx .\MathGeometry.ixx .\Math.ixx .\main.cpp

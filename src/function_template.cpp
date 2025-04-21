@@ -37,7 +37,7 @@ using namespace std;
 // void process(const T& t)
 // {}
 
-// template <typename T> requires convertible_to<T, bool>
+// template <typename T> requires std::convertible_to<T, bool>
 // void process(const T& t)
 // {}
 
@@ -61,7 +61,7 @@ using namespace std;
 // void process(const T& t) requires Incrementable<T>
 // {}
 
-// template <convertible_to<bool> T>
+// template <std::convertible_to<bool> T>
 // void process(const T& t)
 // {}
 
@@ -71,7 +71,7 @@ using namespace std;
 
 template <typename T>
 concept Addable = requires(const T& a, const T& b) {
-    { a + b } -> convertible_to<T>;
+    { a + b } -> std::convertible_to<T>;
 };
 
 template <typename T>
@@ -85,7 +85,7 @@ optional<T> add(const T& a, const T& b) {
 
 template <typename T>
 concept Deletable = requires(const T& a, const T& b) {
-    { a - b } -> convertible_to<T>;
+    { a - b } -> std::convertible_to<T>;
 };
 
 template <typename T>
@@ -99,7 +99,7 @@ optional<T> del(const T& a, const T& b) {
 
 template <typename T>
 concept Multiplyable = requires(const T& a, const T& b) {
-    { a * b } -> convertible_to<T>;
+    { a * b } -> std::convertible_to<T>;
 };
 
 template <typename T>
@@ -113,7 +113,7 @@ optional<T> mul(const T& a, const T& b) {
 
 template <typename T>
 concept Divisable = requires(const T& a, const T& b) {
-    { a / b } -> convertible_to<T>;
+    { a / b } -> std::convertible_to<T>;
 };
 
 template <typename T>
@@ -126,19 +126,82 @@ optional<T> div(const T& a, const T& b) {
 }
 
 template <typename T>
-concept Modsable = requires(const T& a, const T& b) {
-    { a % b } -> convertible_to<T>;
+concept Modable = requires(const T& a, const T& b) {
+    { a % b } -> std::convertible_to<T>;
 };
 
 template <typename T>
 optional<T> mod(const T& a, const T& b) {
-    if constexpr (Modsable<T>) {
+    if constexpr (Modable<T>) {
         return a % b;
     } else {
         return nullopt;
     }
 }
 
+template <typename T>
+concept Comparable = requires(const T& a, const T& b) {
+    { a > b } -> std::convertible_to<bool>;
+    { a < b } -> std::convertible_to<bool>;
+    { a >= b } -> std::convertible_to<bool>;
+    { a <= b } -> std::convertible_to<bool>;
+    { a == b } -> std::convertible_to<bool>;
+    { a != b } -> std::convertible_to<bool>;
+};
+
+template <typename T>
+optional<bool> greater_than(const T& a, const T& b) {
+    if constexpr (Comparable<T>) {
+        return a > b;
+    } else {
+        return nullopt;
+    }
+}
+
+template <typename T>
+optional<bool> less_than(const T& a, const T& b) {
+    if constexpr (Comparable<T>) {
+        return a < b;
+    } else {
+        return nullopt;
+    }
+}
+
+template <typename T>
+optional<bool> greater_or_equal(const T& a, const T& b) {
+    if constexpr (Comparable<T>) {
+        return a >= b;
+    } else {
+        return nullopt;
+    }
+}
+
+template <typename T>
+optional<bool> less_or_equal(const T& a, const T& b) {
+    if constexpr (Comparable<T>) {
+        return a <= b;
+    } else {
+        return nullopt;
+    }
+}
+
+template <typename T>
+optional<bool> is_equal_to(const T& a, const T& b) {
+    if constexpr (Comparable<T>) {
+        return a == b;
+    } else {
+        return nullopt;
+    }
+}
+
+template <typename T>
+optional<bool> is_not_equal_to(const T& a, const T& b) {
+    if constexpr (Comparable<T>) {
+        return a != b;
+    } else {
+        return nullopt;
+    }
+}
 
 // // Helper type trait to check if T has operator+
 // // deepseek R1 - Before C++ 20
@@ -238,6 +301,56 @@ int main()
         cout << "mod: Invalid operation" << endl;
     }
 
+    auto e = greater_than(x, y);
+
+    if (d) {
+        cout << "Greater Than : " << (*e == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "Greater Than: Invalid operation" << endl;
+    }
+
+    e = less_than(x, y);
+
+    if (e) {
+        cout << "less_than : " << (*e == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "less_than: Invalid operation" << endl;
+    }
+
+    e = greater_or_equal(x, y);
+
+    if (e) {
+        cout << "greater_or_equal : " << (*e == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "greater_or_equal: Invalid operation" << endl;
+    }
+
+    e = less_or_equal(x, y);
+
+    if (e) {
+        cout << "less_or_equal : " << (*e == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "less_or_equal: Invalid operation" << endl;
+    }
+
+    e = is_equal_to(x, y);
+
+    if (e) {
+        cout << "equal_to : " << (*e == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "equal_to: Invalid operation" << endl;
+    }
+
+    e = is_not_equal_to(x, y);
+
+    if (e) {
+        cout << "not_equal_to : " << (*e == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "not_equal_to: Invalid operation" << endl;
+    }
+
+    cout << "\nString Operation ... \n" << endl;
+
     string s1 { "Hello " }, s2 { "World" };
 
     auto c = add(s1, s2);
@@ -255,6 +368,55 @@ int main()
     } else {
         cout << "del: Invalid operation" << endl;
     }
+
+    auto f = greater_than(s1, s2);
+
+    if (f) {
+        cout << "greater_than : " << (*f == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "greater_than: Invalid operation" << endl;
+    }
+
+    f = less_than(s1, s2);
+
+    if (f) {
+        cout << "less_than : " << (*f == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "less_than: Invalid operation" << endl;
+    }
+
+    f = greater_or_equal(s1, s2);
+
+    if (f) {
+        cout << "greater_or_equal : " << (*f == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "greater_or_equal: Invalid operation" << endl;
+    }
+
+    f = less_or_equal(s1, s2);
+
+    if (f) {
+        cout << "less_or_equal : " << (*f == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "less_or_equal: Invalid operation" << endl;
+    }
+
+    f = is_equal_to(s1, s2);
+
+    if (f) {
+        cout << "is_equal_to : " << (*f == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "is_equal_to: Invalid operation" << endl;
+    }
+
+    f = is_not_equal_to(s1, s2);
+
+    if (f) {
+        cout << "is_not_equal_to : " << (*f == 0 ? "False" : "True") << endl;
+    } else {
+        cout << "is_not_equal_to: Invalid operation" << endl;
+    }
+
 
     return 0;
 }

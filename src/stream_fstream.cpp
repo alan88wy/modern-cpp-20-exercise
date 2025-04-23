@@ -1,6 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
+import std;
 
 int main()
 {
@@ -21,7 +19,7 @@ int main()
         std::cout << s << "\n";
     }
 
-    std::cout << "*********************************************************************\n";
+    std::cout << "1*********************************************************************\n";
     // read char at a time
     std::fstream fs2 {"data.txt"};
     char c;
@@ -30,6 +28,8 @@ int main()
     {
         std::cout << c;
     }
+
+    std::cout << "2*********************************************************************\n";
 
     // using fstream to write to file
     // std::ios::out = write to a file

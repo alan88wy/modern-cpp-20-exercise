@@ -1,0 +1,8 @@
+There were 6 arguments to this program.
+They are : 
+D:\Learning\c++\modern-cpp-20-exercise\src\rooster.exe
+a
+b
+c
+d
+e

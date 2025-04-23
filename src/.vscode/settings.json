@@ -60,6 +60,13 @@
     ".fantomasignore": "ignore",
     "*.md": "markdown",
     "iosfwd": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "iomanip": "cpp",
+    "spanstream": "cpp",
+    "array": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "ranges": "cpp",
+    "span": "cpp"
   }
 }

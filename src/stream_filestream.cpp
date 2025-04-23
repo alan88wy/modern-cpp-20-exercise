@@ -50,7 +50,8 @@ int main(int argc, char* argv[]) {
     string line;
 
     while (getline(inFile, line)) {
-        cout << line << endl; // using cout instead of println
+        println("{}", line);
+        // cout << line << endl; // using cout instead of println
     }
 
     // Jumping Around with seek() and tell()

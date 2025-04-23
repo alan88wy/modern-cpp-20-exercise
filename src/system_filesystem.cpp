@@ -94,10 +94,10 @@
 
 */
 
-#include <iostream>
-#include <filesystem>
-#include <string>
-#include <vector>
+import std;
+
+using namespace std;
+using namespace std::filesystem;
 
 int main(int argc, char* argv[])
 {
@@ -152,9 +152,9 @@ int main(int argc, char* argv[])
     std::cout << config << " is symbolic like file -> " << (std::filesystem::is_symlink(config) ? "True": "False") << "\n";
     std::cout << config << " size is -> " << std::filesystem::file_size(config) << " bytes\n";
 
-    auto myFolder = "C:\\temp\\ss";
+    auto myFolder = "C:\\temp";
 
-    std::cout << "\nList C:\\temp\\ss folder : \n\n";
+    std::cout << "\nList C:\\temp folder : \n\n";
 
     // This will only stop at level 1 and will not list contents of subdirectories
     for (auto f : std::filesystem::directory_iterator(myFolder))
@@ -173,5 +173,9 @@ int main(int argc, char* argv[])
     std::cout << "__FILE__ -> " << __FILE__ << '\n';
     // std::cout << std::filesystem::path(__FILE__).remove_filename() << '\n';
 
+    space_info s{ space("c:\\") };
+	println("Capacity: {}", s.capacity);
+	println("Free: {}", s.free);
+    
     return 0;
 }

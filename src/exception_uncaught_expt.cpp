@@ -27,6 +27,7 @@ vector<int> readIntegerFile(const string& filename)
 	return integers;
 }
 
+// A terminate_handler can be used to print a helpful error message before exiting.
 [[noreturn]] void myTerminate()
 {
 	println(cerr, "Uncaught exception!");

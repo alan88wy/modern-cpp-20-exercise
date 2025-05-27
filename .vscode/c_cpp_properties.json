@@ -22,7 +22,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.26100.0",
-            "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/cl.exe",
+            "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
             "cStandard": "c23",
             "intelliSenseMode": "windows-msvc-x64",
             "compilerArgs": [
@@ -34,7 +34,7 @@
                 "/Fe:"
             ],
             "cppStandard": "c++23",
-            "compilerPathInCppPropertiesJson": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/cl.exe",
+            "compilerPathInCppPropertiesJson": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
             "mergeConfigurations": false,
             "browse": {
                 "path": [

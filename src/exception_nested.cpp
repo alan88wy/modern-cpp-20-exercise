@@ -34,6 +34,13 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
-    };;
+        println("main() caught MyException: {}", e.what());
+        try {
+            rethrow_if_nested(e);
+        } catch (const runtime_error& e) {
+            
+            println("      Nested exception: {}", e.what());
+        } 
+        
+    };
 }

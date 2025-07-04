@@ -2,7 +2,7 @@
 
 import Math.Algebra;
 
-import <iostream>;
+import std;
 
 
 int main() {

@@ -9,6 +9,10 @@ void handleStackTrace(const stacktrace& trace)
     println("   Here are all the frames in the stack trace:");
     println("----------------------------------------------------------------------------------------");
     println("{}", trace);
+    for (size_t i = 0; i < trace.size(); ++i)
+    {
+        println("   Frame {}: {}", i, trace[i].description());
+    }
     println("----------------------------------------------------------------------------------------");
 
 }

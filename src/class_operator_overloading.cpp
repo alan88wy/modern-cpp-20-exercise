@@ -41,20 +41,20 @@ Base::Base(int i, std::string aa)
 // Copy Constructor
 Base::Base(const Base& cp): myStr {cp.myStr}, idx {cp.idx}
 {
-    // std::cout << "Copy Constructor -> " << myStr <<"\n";
+    std::cout << "Copy Constructor -> " << myStr <<"\n";
 }
 
 // Copy Assignment operator
 Base& Base::operator=(const Base& cp)
 {
-    // std::cout << "Assignment Constructor -> " << myStr << "\n";
+    std::cout << "Assignment Constructor -> " << myStr << "\n";
     return *this;
 }
 
 // Move Constructor
 Base::Base(const Base&& mv): myStr {std::move(mv.myStr)}, idx {std::move(mv.idx)}
 {
-    // std::cout << "Move Constructor -> " << myStr << "\n";
+    std::cout << "Move Constructor -> " << myStr << "\n";
 }
 
 // Move Assignment Operator
@@ -62,6 +62,8 @@ Base& Base::operator=(const Base&& mv)
 {
     myStr = mv.myStr;
     idx = mv.idx;
+
+    std::cout << "Move Assignment Operator -> " << myStr << "\n";
 
     return *this;
 }
@@ -86,6 +88,8 @@ Base& Base::operator+=(const Base& pl)
 {
     this->idx += pl.idx;
 
+    std::cout << "+= Operator -> " << myStr << "\n";
+
     return *this;
 }
 
@@ -103,12 +107,15 @@ int main()
 
     mySecOrig.print_str("mYSecOrig");
 
+    // Copy Constructor will be Called
     Base thirdOrig = myOrig;
 
     thirdOrig.print_str("thirdOrig");
 
+    // Copy Assignment Operator Called
     mySecOrig = myOrig;
 
+    // Move Constructor will be Called
     Base moveOrig = std::move(myOrig);
 
     moveOrig.print_str("moveOrig");
@@ -123,20 +130,25 @@ int main()
 
     Base toMove {0, ""};
 
+    // Move Assignment Operator will be Called
     toMove = std::move(cur);
     toMove.print_str("toMove");
     toMove.print_idx("toMove idx");
 
+    // ++x operator will be called
     ++toMove;
     toMove.print_idx("toMove idx++");
 
+    // x++ operator will be called
     toMove.operator++(0);
     toMove.print_idx("toMove ++idx");
 
+    // Prefix ++ operator will be called
     ++mySecOrig;
     mySecOrig.print_idx("mySecOrig ++idx");
 
     toMove.print_idx("toMove idx before += mySecOrig");
+    // += operator will be called
     toMove += mySecOrig;
     mySecOrig.print_idx(("mySecOrig"));
     toMove.print_idx("toMove += ");

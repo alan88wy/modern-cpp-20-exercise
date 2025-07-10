@@ -134,6 +134,7 @@ int main()
     toMove = std::move(cur);
     toMove.print_str("toMove");
     toMove.print_idx("toMove idx");
+    // cur no longer in the right state. DO NOT USE
 
     // ++x operator will be called
     ++toMove;

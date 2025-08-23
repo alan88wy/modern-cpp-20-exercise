@@ -46,6 +46,8 @@ Base::Base(const Base& cp): myStr {cp.myStr}, idx {cp.idx}
 // Copy Assignment operator
 Base& Base::operator=(const Base& cp)
 {
+    myStr = cp.myStr;
+    idx = cp.idx;
     std::cout << "Assignment Constructor -> " << myStr << "\n";
     return *this;
 }

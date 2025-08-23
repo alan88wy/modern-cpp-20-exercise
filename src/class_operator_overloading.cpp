@@ -96,36 +96,36 @@ Base& Base::operator+=(const Base& pl)
 
 int main()
 {
-    std::cout << "<- Base myOrig {0, \"Original \"}; -> \n";
+    std::cout << "<== Base myOrig {0, \"Original \"}; ==>\n";
     Base myOrig {0, "Original "};
 
     myOrig.print_str("myOrig");
 
-    std::cout << "<- Base myFirstOrig {0, \"First Original \"}; -> \n";
+    std::cout << "<== Base myFirstOrig {0, \"First Original \"}; ==>\n";
 
     Base myFirstOrig {0, "First Original "};
 
     myFirstOrig.print_str("myFirstOrg");
 
-    std::cout << "<- Base mySecOrig {0, \"Second Original \"}; -> \n";
+    std::cout << "<== Base mySecOrig {0, \"Second Original \"}; ==>\n";
 
     Base mySecOrig {0, "Second Original "};
 
     mySecOrig.print_str("mYSecOrig");
 
     // Copy Constructor will be Called
-    std::cout << "<- Base thirdOrig = myOrig; ->\n";
+    std::cout << "<== Base thirdOrig = myOrig; ==>\n";
     Base thirdOrig = myOrig;
 
     thirdOrig.print_str("thirdOrig");
 
     // Copy Assignment Operator Called
-    std::cout << "<- mySecOrig = myOrig; ->\n";
+    std::cout << "<== mySecOrig = myOrig; ==>\n";
     mySecOrig = myOrig;
     mySecOrig.print_str("mySecOrig");
 
     // Move Constructor will be Called
-    std::cout << "<- Base moveOrig = std::move(myOrig); ->\n";
+    std::cout << "<== Base moveOrig = std::move(myOrig); ==>\n";
     Base moveOrig = std::move(myOrig);
 
     moveOrig.print_str("moveOrig");
@@ -134,39 +134,39 @@ int main()
     // myOrig.print_str("myOrig");
 
     // Move Assignment
-    std::cout << "<- Base cur {0, \"New Base\"}; ->\n";
+    std::cout << "<== Base cur {0, \"New Base\"}; ==>\n";
     Base cur {0, "New Base"};
 
     cur.print_str("cur");
 
-    std::cout << "<- Base toMove {0, \"\"}; ->\n";
+    std::cout << "<== Base toMove {0, \"\"}; ==>\n";
     Base toMove {0, ""};
 
     // Move Assignment Operator will be Called
-    std::cout << "<- toMove = std::move(cur); ->\n";
+    std::cout << "<== toMove = std::move(cur); ==>\n";
     toMove = std::move(cur);
     toMove.print_str("toMove");
     toMove.print_idx("toMove idx");
     // cur no longer in the right state. DO NOT USE
 
     // ++x operator will be called
-    std::cout << "<- ++toMove; ->\n";
+    std::cout << "<== ++toMove; ==>\n";
     ++toMove;
     toMove.print_idx("toMove idx++");
 
     // x++ operator will be called
-    std::cout << "<- toMove.operator++(0); ->\n";
+    std::cout << "<== toMove.operator++(0); ==>\n";
     toMove.operator++(0);
     toMove.print_idx("toMove ++idx");
 
     // Prefix ++ operator will be called
-    std::cout << "<- ++mySecOrig; ->\n";
+    std::cout << "<== ++mySecOrig; ==>\n";
     ++mySecOrig;
     mySecOrig.print_idx("mySecOrig ++idx");
 
     toMove.print_idx("toMove idx before += mySecOrig");
     // += operator will be called
-    std::cout << "<- toMove += mySecOrig; ->\n";
+    std::cout << "<== toMove += mySecOrig; ==>\n";
     toMove += mySecOrig;
     mySecOrig.print_idx(("mySecOrig"));
     toMove.print_idx("toMove += ");

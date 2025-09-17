@@ -70,5 +70,6 @@
     "span": "cpp",
     "ostream": "cpp",
     "*.tcc": "cpp"
-  }
+  },
+  "kiroAgent.configureMCP": "Disabled"
 }

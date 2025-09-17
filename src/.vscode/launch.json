@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Learning/c++/modern-cpp-20-exercise/src",
-      "program": "d:/Learning/c++/modern-cpp-20-exercise/src/build/Debug/outDebug",
+      "cwd": "d:\\Learning\\c++/modern-cpp-20-exercise\\src",
+      "program": "D:\\Learning\\c++\\modern-cpp-20-exercise\\build\\Debug\\outDebug.exe",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

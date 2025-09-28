@@ -5,7 +5,7 @@
       "includePath": [
         "${workspaceFolder}/**"
       ],
-      "compilerPath": "C:/Users/alan/scoop/apps/mingw-winlibs/current/bin/gcc.exe",
+      "compilerPath": "C:\\Users\\alan\\scoop\\apps\\mingw-winlibs-msvcrt\\current\\bin\\gcc.exe",
       "cStandard": "c23",
       "cppStandard": "c++23",
       "intelliSenseMode": "windows-gcc-x64",

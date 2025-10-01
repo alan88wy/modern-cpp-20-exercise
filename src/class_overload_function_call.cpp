@@ -1,6 +1,8 @@
 #include <iostream>
 #include <print>
 
+// import std;
+
 using namespace std;
 
 class Squarer

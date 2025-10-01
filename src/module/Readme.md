@@ -21,6 +21,7 @@ g++ -std=c++20 -fmodules-ts .\MathAlgebra.cpp .\MathGeometry.cpp .\Math.cpp .\ma
 * Compile std to enable us to import
 
 ### To compile std.ixx on VC on command prompt
+VCToolsInstallDir=C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207
 ```
 cl /std:c++latest /EHsc /nologo /W4 /c "%VCToolsInstallDir%\modules\std.ixx"
 ```

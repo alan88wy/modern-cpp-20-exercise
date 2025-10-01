@@ -31,7 +31,7 @@ int main()
     int xSquared { squarer(number) };
     int xSquaredAgain { squarer.doSquare(xSquared) };
     // Call the normal member function. 
-    std::println("{} squared is {}, and squared again is {}.", number, xSquared, xSquaredAgain);
+    println("{} squared is {}, and squared again is {}.", number, xSquared, xSquaredAgain);
 
     return 0;
 }

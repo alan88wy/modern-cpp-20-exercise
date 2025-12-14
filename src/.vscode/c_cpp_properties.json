@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "C:\\Users\\alan\\scoop\\apps\\mingw-winlibs-ucrt\\current\bin\\gcc.exe"
+            "cStandard": "c23",
+            "cppStandard": "c23",
+            "intelliSenseMode": "windows""
+        }
+    ],
+    "version": 4,
+    "includePath": [
+                "${workspaceFolder}/**",
+                "D:\\Learning\\robotics\\include\\*.*",
+                "D:\\Learning\\robotics\\include\\**"
+            ],
+}

@@ -1,21 +1,28 @@
 {
-    "configurations": [
-        {
-            "name": "Windows",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [],
-            "compilerPath": "C:\\Users\\alan\\scoop\\apps\\mingw-winlibs-ucrt\\current\bin\\gcc.exe"
-            "cStandard": "c23",
-            "cppStandard": "c23",
-            "intelliSenseMode": "windows""
-        }
-    ],
-    "version": 4,
-    "includePath": [
-                "${workspaceFolder}/**",
-                "D:\\Learning\\robotics\\include\\*.*",
-                "D:\\Learning\\robotics\\include\\**"
-            ],
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "compilerPath": "C:/Users/alan/scoop/apps/mingw/current/bin/gcc.exe",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ]
+    },
+     {
+      "name": "MSVC",
+      "compilerPath": "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe",
+      "compilerArgs": [
+        "/std:c++latest"
+      ],
+      "cppStandard": "c++latest",
+      "cStandard": "c17",
+      "intelliSenseMode": "windows-msvc-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ]
+    }
+  ],
+  "version": 4
 }

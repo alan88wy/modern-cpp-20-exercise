@@ -1,4 +1,0 @@
-Hello, World!
-Writing first line
-Writing second line
-Writing third line
